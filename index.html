@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 5 example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="module" src="./src/index.js"></script>
+
+    <style>
+      select {
+        width: 200px;
+      }
+
+      input[type='date'] {
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        min-height: 1.2em;
+      }
+    </style>
+  </head>
+
+  <body class="p-4">
+    <form id="frmExamFilter">
+      <input type="hidden" id="totalSize" value="0" />
+      <input type="hidden" id="totalFiltered" value="" />
+      <input type="hidden" id="page" value="1" />
+      <input type="hidden" id="examId" value="" />
+      <input type="hidden" id="examStatus" value="" />
+
+      <div class="form-group row mb-0">
+        <div class="col-md-2">
+          <label class="col-form-label" style="float: left">Nº PROTOCOLO</label>
+          <input
+            class="form-control form-control-sm"
+            type="text"
+            id="numberProtocol"
+            name="numberProtocol"
+            placeholder="escreva aqui..."
+          />
+        </div>
+
+        <div class="col-md-5">
+          <label class="col-form-label" style="float: left"
+            >NOME DO PACIENTE</label
+          >
+          <input
+            class="form-control form-control-sm"
+            type="text"
+            id="patientName"
+            name="patientName"
+            placeholder="escreva aqui..."
+          />
+        </div>
+
+        <div class="col-md-5">
+          <label class="col-form-label" style="float: left">CPF</label>
+          <input
+            class="form-control form-control-sm"
+            type="text"
+            id="patientCpf"
+            name="patientCpf"
+            placeholder="escreva aqui..."
+          />
+        </div>
+      </div>
+
+      <div class="form-group row mb-0">
+        <div class="col-md-2">
+          <label class="col-form-label" style="float: left"
+            >FILTRO POR DATA DE</label
+          >
+          <select
+            class="form-control form-select-sm"
+            id="typeDate"
+            name="typeDate"
+          >
+            <option value="">Selecione uma opção...</option>
+            <option value="DATE_REQUESTED">Data de Solicitação</option>
+            <option value="DATE_SCHEDULED">Data Agendada</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="col-form-label">DATA INICIO</label>
+          <p style="color: red; float: left">*</p>
+          <input
+            id="startDate"
+            name="startDate"
+            class="form-control form-control-sm"
+            type="date"
+            placeholder="DD/MM/YYYY"
+          />
+        </div>
+        <div class="col-md-3">
+          <label class="col-form-label">DATA FINAL</label>
+          <p style="color: red; float: left">*</p>
+          <input
+            id="endDate"
+            name="endDate"
+            class="form-control form-control-sm"
+            type="date"
+            placeholder="DD/MM/YYYY"
+          />
+        </div>
+        <div class="col-md-4">
+          <label class="col-form-label" style="float: left"
+            >STATUS DO EXAME</label
+          >
+          <p style="color: red; float: left">*</p>
+          <select
+            class="form-control form-select-sm"
+            id="examStatus"
+            name="examStatus"
+          >
+            <option value="">Selecione uma opção...</option>
+            <option value="">Solicitado</option>
+            <option value="">Agendado</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row mb-0">
+        <div class="form-group mb-4" style="margin-top: 15px">
+          <button
+            id="btnFilterExam"
+            class="btn btn-gradient"
+            style="color: white; border-radius: 5px; font-weight: bold"
+          >
+            FILTRAR
+          </button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
